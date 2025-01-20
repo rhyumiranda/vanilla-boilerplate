@@ -1,21 +1,32 @@
 {
   "name": "rhyumiranda",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "fix": "prettier . --write",
+    "lint:fix": "eslint . --fix",
+    "lint": "eslin src/js/*/*.js src/js/*.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.4"
+    "@11ty/eleventy": "^3.0.0",
+    "@prismicio/client": "^7.15.1"
   },
   "devDependencies": {
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "@eslint/js": "^9.18.0",
+    "editorconfig": "^2.0.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.20.0"
   }
 }
