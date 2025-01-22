@@ -4,11 +4,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "eleventy --serve",
-    "build": "eleventy",
+    "watch:sass": "sass --watch src/sass:_site/assets/css",
+    "build:sass": "sass src/sass:_site/assets/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
     "fix": "prettier . --write",
     "lint:fix": "eslint . --fix",
-    "lint": "eslin src/js/*/*.js src/js/*.js"
+    "lint": "eslin src/js/*/*.js src/js/*.js",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
   },
   "keywords": [],
   "author": "",
@@ -17,16 +21,21 @@
   "type": "module",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@prismicio/client": "^7.15.1"
+    "@barba/core": "^2.10.3",
+    "@prismicio/client": "^7.15.1",
+    "gsap": "^3.12.7"
   },
   "devDependencies": {
+    "@11ty/eleventy-img": "^6.0.1",
     "@eslint/js": "^9.18.0",
     "editorconfig": "^2.0.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "globals": "^15.14.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.4.2",
+    "sass": "^1.83.4",
     "typescript-eslint": "^8.20.0"
   }
 }
