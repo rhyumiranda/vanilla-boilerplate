@@ -14,7 +14,7 @@ export default function (eleventyConfig) {
 
   });
 
-  eleventyConfig.addCollection("work", function (collectionApi) {
+  eleventyConfig.addCollection("work", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/works/work/*.md");
   });
 
