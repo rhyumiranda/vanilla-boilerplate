@@ -6,15 +6,20 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/css/main.css">
   <script defer src="/js/main.js"></script>
-
 </head>
 <body>
-  <a href="/" onclick="route()">Home</a>
-  <a href="/blog" onclick="route()">Blog</a>
-  <a href="/contact" onclick="route()">Contact</a>
-  {{ content | safe }}
+  <nav>
+    <a href="/" data-router-link>Home</a>
+    <a href="/work/" data-router-link>Work</a>
+    <a href="/contact/" data-router-link>Contact</a>
+  </nav>
+
+  <div id="app">
+    {{ content | safe }}
+  </div>
+
   <script type="module">
-    import { Router } from '/js/router.js';
+    import Router from '/js/router/router.js';
     new Router();
   </script>
 </body>
