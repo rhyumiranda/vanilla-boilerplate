@@ -1,0 +1,14 @@
+---
+layout: base.njk
+pagination:
+  data: collections.work
+  size: 1
+  alias: work
+permalink: /work/{{ work.data.slug }}/index.html
+---
+
+<article>
+  <h1>{{ work.data.title }}</h1>
+  <p>{{ work.data.description }}</p>
+  {{ work.templateContent | safe }}
+</article>

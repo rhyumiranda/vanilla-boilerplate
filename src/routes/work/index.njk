@@ -1,0 +1,13 @@
+---
+layout: base.njk
+title: Work
+permalink: /work/index.html
+---
+<div class="work-list">
+  {% for work in collections.work %}
+    <a href="/work/{{ work.data.slug }}/" data-router-link>
+      <h2>{{ work.data.title }}</h2>
+      <p>{{ work.data.description }}</p>
+    </a>
+  {% endfor %}
+</div>
