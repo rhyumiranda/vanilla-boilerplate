@@ -14,14 +14,20 @@ export default function (eleventyConfig) {
 
   });
 
+  eleventyConfig.addCollection("work", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/works/work/*.md");
+  });
+
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/js");
-
 
   return {
     dir: {
       input: "src",
       output: "_site",
+      includes: "_includes",
     },
+    pathPrefix: "/",
+    htmlTemplateEngine: "njk"
   };
 }
