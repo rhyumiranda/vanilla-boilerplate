@@ -4,7 +4,7 @@ class Router {
       '/': () => this.renderPage('/'),
       '/work/': () => this.renderPage('/work/'),
       '/contact/': () => this.renderPage('/contact/'),
-      '/work/:id/': (id) => this.renderPage(`/work/${id}/`)
+      '/work/:slug/': (slug) => this.renderPage(`/work/${slug}/`)
     };
     this.init();
   }
