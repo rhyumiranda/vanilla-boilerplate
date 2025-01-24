@@ -5,6 +5,9 @@ pagination:
   size: 1
   alias: work
 permalink: /work/{{ work.data.slug }}/index.html
+eleventyComputed:
+  title: "{{ work.data.title }}"  # Move title here for proper data access
+
 ---
 
 <article>
