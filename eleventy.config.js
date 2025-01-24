@@ -14,6 +14,17 @@ export default function (eleventyConfig) {
 
   });
 
+  eleventyConfig.addWatchTarget("./src/sass/**/*.scss");
+
+  // Optimize BrowserSync config
+  eleventyConfig.setBrowserSyncConfig({
+    files: ['./_site/css/**/*.css'],
+    open: true,
+    notify: false,
+    ghostMode: false,
+    ui: false
+  });
+
   eleventyConfig.addCollection("work", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/works/work/*.md");
   });
